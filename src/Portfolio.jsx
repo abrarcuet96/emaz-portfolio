@@ -75,34 +75,34 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <section id="home" className="pt-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Mohammad Emaz Uddin</h1>
-              <p className="text-xl md:text-2xl mb-6 text-blue-100">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Mohammad Emaz Uddin</h1>
+              <p className="text-xl md:text-2xl mb-6 text-gray-700">
                 Biomedical Physics & Electrical Engineering Researcher
               </p>
-              <p className="text-lg mb-8 text-blue-50">
+              <p className="text-lg mb-8 text-gray-600">
                 Specializing in IoT, Embedded Systems, and Biomedical Device Development
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                  className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
                 >
                   Get In Touch
                 </button>
                 <button
                   onClick={() => scrollToSection('projects')}
-                  className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+                  className="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-colors"
                 >
                   View Projects
                 </button>
               </div>
             </div>
             <div className="flex-shrink-0">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-gray-200 shadow-2xl">
                 <img
                   src={emazImage}
                   alt="Mohammad Emaz Uddin"
@@ -113,7 +113,7 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="text-center pb-8">
-          <ChevronDown size={32} className="mx-auto animate-bounce" />
+          <ChevronDown size={32} className="mx-auto animate-bounce text-gray-400" />
         </div>
       </section>
 
