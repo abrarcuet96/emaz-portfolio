@@ -1,26 +1,41 @@
-import  { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Award, Briefcase, GraduationCap, Code, Lightbulb, Users, BookOpen, ChevronDown, Menu, X } from 'lucide-react';
-import emazImage from "../src/assets/emaz_img.jpg"
+import {
+  Award,
+  BookOpen,
+  Briefcase,
+  ChevronDown,
+  Code,
+  GraduationCap,
+  Lightbulb,
+  Linkedin,
+  Mail,
+  MapPin,
+  Menu,
+  Phone,
+  Users,
+  X,
+} from "lucide-react";
+import { useState } from "react";
+import emazImage from "../src/assets/emaz_img.jpg";
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     setMobileMenuOpen(false);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   const navigation = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'education', label: 'Education' },
-    { id: 'research', label: 'Research' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'achievements', label: 'Achievements' },
-    { id: 'contact', label: 'Contact' }
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "education", label: "Education" },
+    { id: "research", label: "Research" },
+    { id: "projects", label: "Projects" },
+    { id: "experience", label: "Experience" },
+    { id: "skills", label: "Skills" },
+    { id: "achievements", label: "Achievements" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -29,16 +44,20 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-xl font-bold text-gray-800">Mohammad Emaz Uddin</div>
-            
+            <div className="text-xl font-bold text-gray-800">
+              Mohammad Emaz Uddin
+            </div>
+
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
-              {navigation.map(item => (
+              {navigation.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors ${
-                    activeSection === item.id ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                    activeSection === item.id
+                      ? "text-blue-600"
+                      : "text-gray-600 hover:text-blue-600"
                   }`}
                 >
                   {item.label}
@@ -60,7 +79,7 @@ const Portfolio = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-4 py-3 space-y-2">
-              {navigation.map(item => (
+              {navigation.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -79,22 +98,25 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Mohammad Emaz Uddin</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Mohammad Emaz Uddin
+              </h1>
               <p className="text-xl md:text-2xl mb-6 text-gray-700">
                 Biomedical Physics & Electrical Engineering Researcher
               </p>
-              <p className="text-lg mb-8 text-gray-600">
-                Specializing in IoT, Embedded Systems, and Biomedical Device Development
+              <p className="text-lg mb-8 text-gray-600 md:max-w-xl">
+                Specializing in IoT, Embedded Systems, Computational modeling,
+                Biophysics and Biomedical Device Development
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <button
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => scrollToSection("contact")}
                   className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
                 >
                   Get In Touch
                 </button>
                 <button
-                  onClick={() => scrollToSection('projects')}
+                  onClick={() => scrollToSection("projects")}
                   className="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-colors"
                 >
                   View Projects
@@ -113,39 +135,82 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="text-center pb-8">
-          <ChevronDown size={32} className="mx-auto animate-bounce text-gray-400" />
+          <ChevronDown
+            size={32}
+            className="mx-auto animate-bounce text-gray-400"
+          />
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            About Me
+          </h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-gray-700 mb-6">
-              I am a dedicated researcher and engineer with a strong foundation in Electrical and Electronic Engineering 
-              from BUET and currently pursuing my Master's in Biomedical Physics and Technology at the University of Dhaka.
+              I am a dedicated researcher and engineer with a strong foundation
+              in Electrical and Electronic Engineering from BUET and a completed
+              M.S. in Biomedical Physics and Technology from the University of
+              Dhaka.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              My passion lies at the intersection of biomedical engineering, IoT, and embedded systems, where I focus on 
-              developing innovative solutions for healthcare challenges. With experience in both academic research and 
-              professional education, I bring a unique perspective to solving real-world problems.
+              My research interests lie at the intersection of biomedical
+              engineering, biophysics, and computational approaches to
+              healthcare, with particular interests in eye biomechanics,
+              computational modeling, biomedical signal and image processing,
+              IoT, and embedded systems. I am passionate about applying
+              engineering principles and computational techniques to understand
+              complex biological systems and develop innovative solutions to
+              real-world healthcare challenges.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-              <div className="p-6 bg-blue-50 rounded-lg">
-                <Lightbulb className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-lg mb-2">Innovation</h3>
-                <p className="text-gray-600">Developing cutting-edge biomedical devices and IoT solutions</p>
+            <p className="text-lg text-gray-700 mb-8">
+              With experience in academic research, engineering, and
+              professional education, I bring an interdisciplinary perspective
+              to problem-solving, combining technical knowledge, research-driven
+              thinking, and a strong interest in translating scientific ideas
+              into practical applications.
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl text-left">
+              <Lightbulb className="w-10 h-10 text-blue-600 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Innovation</h3>
+                <p className="text-gray-600">
+                  Developing cutting-edge biomedical devices and IoT solutions
+                </p>
               </div>
-              <div className="p-6 bg-blue-50 rounded-lg">
-                <Code className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-lg mb-2">Technical Excellence</h3>
-                <p className="text-gray-600">Proficient in embedded systems, signal processing, and automation</p>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl text-left">
+              <Code className="w-10 h-10 text-blue-600 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">
+                  Technical Excellence
+                </h3>
+                <p className="text-gray-600">
+                  Proficient in embedded systems, signal processing, and
+                  automation
+                </p>
               </div>
-              <div className="p-6 bg-blue-50 rounded-lg">
-                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-lg mb-2">Leadership</h3>
-                <p className="text-gray-600">Experience in project management and team collaboration</p>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl text-left">
+              <Users className="w-10 h-10 text-blue-600 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Leadership</h3>
+                <p className="text-gray-600">
+                  Experience in project management and team collaboration
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl text-left">
+              <BookOpen className="w-10 h-10 text-blue-600 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Research Focus</h3>
+                <p className="text-gray-600">
+                  Eye Biomechanics, Biophysics, Computational Modeling
+                </p>
               </div>
             </div>
           </div>
@@ -155,19 +220,21 @@ const Portfolio = () => {
       {/* Education Section */}
       <section id="education" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Education</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Education
+          </h2>
           <div className="max-w-4xl mx-auto space-y-8">
             <EducationCard
               degree="Master of Science in Biomedical Physics and Technology"
               institution="University of Dhaka, Dhaka, Bangladesh"
               period="Apr 2025 - Present"
-              details="Course work will be completed within January'26, only Thesis will be left"
+              details="CGPA: 4.00/4.00 (Ranked 1st in the Department)"
             />
             <EducationCard
               degree="Bachelor of Science in Electrical and Electronic Engineering"
               institution="Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
               period="Apr 2019 – Jun 2024"
-              details="CGPA: 3.27 (Scored A+ in Thesis)"
+              details="CGPA: 3.27/4.00 (Scored A+ in Thesis)"
               thesis="Determining The Battery Size For The On-Body Sensors Of Wireless Body Area Network"
             />
             <EducationCard
@@ -189,40 +256,43 @@ const Portfolio = () => {
       {/* Research Section */}
       <section id="research" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Research & Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Research & Projects
+          </h2>
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Ongoing Research</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+              Published Research
+            </h3>
             <div className="grid gap-6">
               <ResearchCard
-                title="Wearable battery-free chip-less patch for bioimpedance measurement of cutaneous lesions using TPIM"
-                type="MS Thesis"
-              />
-              <ResearchCard
-                title="COVID-19 Cough Audio Classification Using Machine Learning and Neural Networks"
-              />
-              <ResearchCard
-                title="Determining Battery Size for the On-Body Sensors of Wireless Body Area Network"
-              />
-              <ResearchCard
+                blue
                 title="Exploratory Analysis of Age-Related Changes in Beef: Bioimpedance and Chemical Composition Perspectives"
-                status="Under Review"
+                link="https://doi.org/10.3329/dujs.v74i1.81782"
               />
+            </div>
+          </div>
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+              Ongoing Research
+            </h3>
+            <div className="grid gap-6">
+              <ResearchCard title="An Integrated Multiphysics Modeling of the Thermo-Fluidic Human Eye and Nanoparticle-Assisted Ocular Drug Delivery with Pharmacokinetic-Pharmacodynamic Coupling (M.S. Thesis)" />
+              <ResearchCard title="COVID-19 Cough Audio Classification Using Machine Learning and Neural Networks" />
+              <ResearchCard title="Determining Battery Size for the On-Body Sensors of Wireless Body Area Network (B.Sc. Thesis)" />
             </div>
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Ongoing Projects</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+              Ongoing Projects
+            </h3>
             <div className="grid gap-6">
               <ProjectCard
                 title="Developing Medical Device for Lymphedema in Lymphatic Filariasis Treatment"
                 description="Under supervision of icddr,b & BMPT Department, DU"
               />
-              <ProjectCard
-                title="Developing IoT Based Portable ECG Acquisition & Measurement Device"
-              />
-              <ProjectCard
-                title="Batteryless IoT Biosensor Node Powered by Body Heat and Motion for Long-Term Biomedical Monitoring"
-              />
+              <ProjectCard title="Developing IoT Based Portable ECG Acquisition & Measurement Device" />
+              <ProjectCard title="Batteryless IoT Biosensor Node Powered by Body Heat and Motion for Long-Term Biomedical Monitoring" />
             </div>
           </div>
         </div>
@@ -231,7 +301,9 @@ const Portfolio = () => {
       {/* Academic Projects Section */}
       <section id="projects" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Academic Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Academic Projects
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <AcademicProjectCard
               title="IoT Based Gas Burner Monitoring System"
@@ -276,8 +348,16 @@ const Portfolio = () => {
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Professional Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Professional Experience
+          </h2>
           <div className="max-w-4xl mx-auto space-y-6">
+            <ExperienceCard
+              title="Physics Mentor"
+              company="Shikho"
+              period="Sept 2026 - Present"
+              icon={<GraduationCap className="w-6 h-6" />}
+            />
             <ExperienceCard
               title="Physics and Mathematics Instructor"
               company="10 Minute School"
@@ -299,7 +379,9 @@ const Portfolio = () => {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Club Activities</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
+              Club Activities
+            </h3>
             <div className="max-w-4xl mx-auto space-y-6">
               <ExperienceCard
                 title="Vice President"
@@ -321,31 +403,79 @@ const Portfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Skills & Expertise</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Skills & Expertise
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <SkillCard
               title="Programming Languages"
-              skills={['C', 'C++', 'Verilog HDL', 'System Verilog', 'ARM Assembly']}
+              skills={[
+                "C",
+                "C++",
+                "Verilog HDL",
+                "System Verilog",
+                "ARM Assembly",
+              ]}
             />
             <SkillCard
               title="Software Tools"
-              skills={['MATLAB', 'Simulink', 'Proteus', 'PSAF', 'PSpice', 'LTSpice', 'Intel Quartus', 'AutoCAD']}
+              skills={[
+                "Comsol Multiphysics",
+                "MATLAB",
+                "Simulink",
+                "Proteus",
+                "PSAF",
+                "PSpice",
+                "LTSpice",
+                "Intel Quartus",
+                "AutoCAD",
+              ]}
             />
             <SkillCard
               title="Hardware"
-              skills={['Embedded Circuits Design', 'FPGA', 'PLC', 'STM-32', 'ESP-32', 'NodeMCU', 'Arduino']}
+              skills={[
+                "Embedded Circuits Design",
+                "FPGA",
+                "PLC",
+                "STM-32",
+                "ESP-32",
+                "NodeMCU",
+                "Arduino",
+              ]}
             />
             <SkillCard
               title="Research Interests"
-              skills={['Embedded Systems & IoT', 'Robotics & Automation', 'Biomedical Device Development', 'Signal Processing', 'Biomedical Imaging']}
+              skills={[
+                "Eye Biomechanics",
+                "Biophysics",
+                "Computational Modeling",
+                "Embedded Systems & IoT",
+                "Robotics & Automation",
+                "Biomedical Device Development",
+                "Signal Processing",
+                "Biomedical Imaging",
+              ]}
             />
             <SkillCard
               title="Office & Development"
-              skills={['MS Office Suite', 'CodeBlocks', 'Arduino IDE', 'Keil', 'Cisco Packet Tracer', 'Windows OS']}
+              skills={[
+                "MS Office Suite",
+                "CodeBlocks",
+                "Arduino IDE",
+                "Keil",
+                "Cisco Packet Tracer",
+                "Windows OS",
+              ]}
             />
             <SkillCard
               title="Soft Skills"
-              skills={['Project Management', 'Event Management', 'Leadership', 'Presentation', 'Technical Writing']}
+              skills={[
+                "Project Management",
+                "Event Management",
+                "Leadership",
+                "Presentation",
+                "Technical Writing",
+              ]}
             />
           </div>
         </div>
@@ -354,42 +484,35 @@ const Portfolio = () => {
       {/* Achievements Section */}
       <section id="achievements" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Achievements</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Achievements
+          </h2>
           <div className="max-w-4xl mx-auto space-y-4">
-            <AchievementCard
-              text="Bronze Honour in International Youth Math Challenge (IYMC) – 2024 (Top 15%)"
-            />
-            <AchievementCard
-              text="Prototype development for IoT based Gas Burner Monitoring with Spectrum Engineering Consortium Ltd. (2024)"
-            />
-            <AchievementCard
-              text="Selected among top three poem writers at BUET Literature Fest (2024)"
-            />
-            <AchievementCard
-              text="Emerging Instructor of Content Academics, 10 Minute School (May 2023)"
-            />
-            <AchievementCard
-              text="Semifinalist (Team Phoenix), HULT PRIZE at BUET-2021"
-            />
-            <AchievementCard
-              text="Top-30 teams Phase-I (Team Digifarm), HULT PRIZE at BUET-2020"
-            />
-            <AchievementCard
-              text="2nd Runner-up at Bangladesh Biology Olympiad (BDBO) – Regional, Dhaka South (2017)"
-            />
-            <AchievementCard
-              text="Best Speaker at Beijing Education Exchange Program 2016 by BDCN Foundation"
-            />
+            <AchievementCard text="Eligible for Khondkar Lutfi Rabbani-Nazmun Nesa Memorial Scholarship	 for being the 1st of the department in M.S." />
+            <AchievementCard text="Bronze Honour in International Youth Math Challenge (IYMC) – 2024 (Top 15%)" />
+            <AchievementCard text="Prototype development for IoT based Gas Burner Monitoring with Spectrum Engineering Consortium Ltd. (2024)" />
+            <AchievementCard text="Selected among top three poem writers at BUET Literature Fest (2024)" />
+            <AchievementCard text="Emerging Instructor of Content Academics, 10 Minute School (May 2023)" />
+            <AchievementCard text="Semifinalist (Team Phoenix), HULT PRIZE at BUET-2021" />
+            <AchievementCard text="Top-30 teams Phase-I (Team Digifarm), HULT PRIZE at BUET-2020" />
+            <AchievementCard text="2nd Runner-up at Bangladesh Biology Olympiad (BDBO) – Regional, Dhaka South (2017)" />
+            <AchievementCard text="Best Speaker at Beijing Education Exchange Program 2016 by BDCN Foundation" />
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-blue-800">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-br from-blue-600 to-blue-800"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+            Get In Touch
+          </h2>
           <p className="text-center text-blue-100 mb-12 text-lg">
-            Feel free to reach out for collaborations, opportunities, or just a friendly chat!
+            Feel free to reach out for collaborations, opportunities, or just a
+            friendly chat!
           </p>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
@@ -400,8 +523,8 @@ const Portfolio = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Email</p>
-                    <a 
-                      href="mailto:emazeeebuet83@gmail.com" 
+                    <a
+                      href="mailto:emazeeebuet83@gmail.com"
                       className="text-gray-800 hover:text-blue-600 transition-colors font-semibold"
                     >
                       emazeeebuet83@gmail.com
@@ -417,8 +540,8 @@ const Portfolio = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Phone</p>
-                    <a 
-                      href="tel:+8801840903757" 
+                    <a
+                      href="tel:+8801840903757"
                       className="text-gray-800 hover:text-blue-600 transition-colors font-semibold"
                     >
                       +880 1840-903757
@@ -433,7 +556,9 @@ const Portfolio = () => {
                     <MapPin className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-medium">Location</p>
+                    <p className="text-sm text-gray-500 font-medium">
+                      Location
+                    </p>
                     <p className="text-gray-800 font-semibold">
                       18/3 Nayapaltan, Dhaka, Bangladesh
                     </p>
@@ -447,9 +572,11 @@ const Portfolio = () => {
                     <Linkedin className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-medium">LinkedIn</p>
-                    <a 
-                      href="https://linkedin.com/in/mdemazuddin" 
+                    <p className="text-sm text-gray-500 font-medium">
+                      LinkedIn
+                    </p>
+                    <a
+                      href="https://linkedin.com/in/mdemazuddin"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-800 hover:text-blue-600 transition-colors font-semibold"
@@ -467,11 +594,11 @@ const Portfolio = () => {
                   Let's connect and create something amazing together!
                 </p>
                 <p className="text-white text-opacity-90">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                  I'm always open to discussing new projects, creative ideas, or
+                  opportunities to be part of your vision.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -479,7 +606,9 @@ const Portfolio = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">© 2024 Mohammad Emaz Uddin. All rights reserved.</p>
+          <p className="text-gray-400">
+            © 2024 Mohammad Emaz Uddin. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
@@ -496,20 +625,46 @@ const EducationCard = ({ degree, institution, period, details, thesis }) => (
         <p className="text-gray-600 font-medium mb-2">{institution}</p>
         <p className="text-sm text-gray-500 mb-2">{period}</p>
         <p className="text-gray-700">{details}</p>
-        {thesis && <p className="text-sm text-gray-600 mt-2 italic">Thesis: {thesis}</p>}
+        {thesis && (
+          <p className="text-sm text-gray-600 mt-2 italic">Thesis: {thesis}</p>
+        )}
       </div>
     </div>
   </div>
 );
 
-const ResearchCard = ({ title, type, status }) => (
-  <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-600">
+const ResearchCard = ({ title, type, status, link, blue }) => (
+  <div
+    className={`rounded-lg p-6 border-l-4 ${
+      blue ? "bg-blue-50 border-blue-600" : "bg-gray-50 border-green-600"
+    }`}
+  >
     <div className="flex items-start gap-4">
-      <Lightbulb className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+      <Lightbulb
+        className={`w-6 h-6 flex-shrink-0 mt-1 ${
+          blue ? "text-blue-600" : "text-green-600"
+        }`}
+      />
       <div className="flex-1">
         <h4 className="font-semibold text-gray-800 mb-1">{title}</h4>
-        {type && <span className="text-sm text-green-600 font-medium">{type}</span>}
-        {status && <span className="text-sm text-orange-600 font-medium ml-2">({status})</span>}
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline break-all"
+          >
+            (DOI Link: {link})
+          </a>
+        )}
+        {type && (
+          <span className="text-sm text-green-600 font-medium">{type}</span>
+        )}
+        {status && (
+          <span className="text-sm text-orange-600 font-medium ml-2">
+            ({status})
+          </span>
+        )}
       </div>
     </div>
   </div>
@@ -556,7 +711,10 @@ const SkillCard = ({ title, skills }) => (
     <h4 className="text-lg font-semibold text-gray-800 mb-4">{title}</h4>
     <div className="flex flex-wrap gap-2">
       {skills.map((skill, index) => (
-        <span key={index} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+        <span
+          key={index}
+          className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+        >
           {skill}
         </span>
       ))}
@@ -579,7 +737,10 @@ const ContactInfo = ({ icon, label, value, href }) => (
     <div className="flex-1">
       <p className="text-sm text-blue-200">{label}</p>
       {href ? (
-        <a href={href} className="text-white hover:text-blue-200 transition-colors">
+        <a
+          href={href}
+          className="text-white hover:text-blue-200 transition-colors"
+        >
           {value}
         </a>
       ) : (
